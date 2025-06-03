@@ -1,12 +1,7 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,22 +15,19 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://bejewelled-paprenjak-7455d8.netlify.app',
+  // Since you're serving at the root of that Netlify domain:
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // Not strictly required for Netlify, but useful if you ever publish via GitHub Pages.
+  organizationName: 'pawelsmietanka-silvair', // Your GitHub org/user name :contentReference[oaicite:4]{index=4}
+  projectName: 'docusaurus-f970a',            // Your repo name :contentReference[oaicite:5]{index=5}
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization: default English only for now
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -47,11 +39,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Point "edit this page" links to your GitHub repo:
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/pawelsmietanka-silvair/docusaurus-f970a/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -59,17 +50,16 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Update the "edit this page" link to your repo:
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+            'https://github.com/pawelsmietanka-silvair/docusaurus-f970a/tree/main/blog/',
+          // Enforce blogging best practices with warnings:
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -78,12 +68,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      // Replace with your own social card if desired
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Silvair Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Silvair Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -91,11 +81,11 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/pawelsmietanka-silvair/docusaurus-f970a',
             label: 'GitHub',
             position: 'right',
           },
@@ -108,7 +98,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Getting Started',
                 to: '/docs/intro',
               },
             ],
@@ -125,8 +115,8 @@ const config = {
                 href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
@@ -139,12 +129,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/pawelsmietanka-silvair/docusaurus-f970a',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Silvair. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
